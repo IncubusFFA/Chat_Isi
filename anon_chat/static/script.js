@@ -33,11 +33,20 @@ async function loadMessages() {
       const safeText = escapeHTML(m.text);
       const safeTime = escapeHTML(m.time);
 
-      // Превращаем ссылки в кликабельные
-      const linkedText = safeText.replace(
+      // Сначала выделяем @ник и #ник разными классами
+      let processedText = safeText
+        .replace(/@(\S+)/g, '<span class="mention-at">@$1</span>')
+        .replace(/#(\S+)/g, '<span class="mention-hash">#$1</span>');
+      
+      // Потом превращаем ссылки в кликабельные
+      const linkedText = processedText.replace(
         /(https?:\/\/[^\s]+)/g,
         url => `<a href="${url}" target="_blank" rel="noopener noreferrer">${url}</a>`
       );
+      
+    
+      
+    
 
       // Фото (если есть)
       let imgHTML = m.img_url ? `<br><img class="message-img" src="${escapeHTML(m.img_url)}" alt=" [Фото] " />` : '';

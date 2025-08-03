@@ -62,7 +62,7 @@ def post_message(room):
     img_url = None
     if file and file.filename:
         filename = secure_filename(file.filename)
-        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")  # Заменил двоеточия на подчёркивания
         filename = f"{timestamp}_{filename}"
         filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
         file.save(filepath)
@@ -70,6 +70,7 @@ def post_message(room):
 
     if not text and not img_url:
         return jsonify({"error": "Пустое сообщение"}), 400
+
 
     messages = load_messages(room)
 

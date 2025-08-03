@@ -128,6 +128,49 @@ body {
   word-break: break-word;
 }
 
+.mention-at {
+  background-color: #7289da; /* фирменный синий Discord */
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-block;
+  user-select: none;
+  cursor: default;
+  box-shadow: 0 0 5px #7289daaa;
+  transition: background-color 0.2s ease;
+}
+
+.mention-at:hover {
+  background-color: #5b6eae;
+}
+
+
+.mention-hash {
+  background: linear-gradient(to right, #89b4fa, #f38ba8);
+  color: #111;
+  font-weight: bold;
+  border: none;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  box-shadow: 0 0 8px #89b4fa99;
+  cursor: pointer;
+  display: inline-block;
+  transition: 0.2s;
+  user-select: none;
+  font-size: 0.9rem;
+}
+
+.mention-hash:hover {
+  box-shadow: 0 0 12px #f38ba899;
+  transform: scale(1.05);
+}
+
+
+
+
+
 .message a {
   display: inline-block;
   color: #00aaff;
