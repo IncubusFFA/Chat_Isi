@@ -26,10 +26,10 @@
 
 ![2000x.css](./images/ScreenshotHome.png)
 
-## 6. Hypr.css
+## 6. hypr.css
 
 ![2000x.css](./images/ScreenshotHypr.png)
 
-## 7. Comics.css
+## 7. comics.css
 
 ![2000x.css](./images/ScreenshotComics.png)
