@@ -86,3 +86,6 @@ python app.py                    # запускаем сервер
     Открой встроенный терминал (внизу IDE):
     python -m pip install flask
 4. Запусти app.py 
+
+при запуске в PyCharm файлы могут сохраниться сюда VTRoot\HarddiskVolume3\Chat_Isi\data
+для избежания этого запускайте в режиме debug
