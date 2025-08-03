@@ -87,5 +87,5 @@ python app.py                    # запускаем сервер
     python -m pip install flask
 4. Запусти app.py 
 
-при запуске в PyCharm файлы могут сохраниться сюда VTRoot\HarddiskVolume3\Chat_Isi\data
+При запуске в PyCharm файлы могут сохраниться сюда VTRoot\HarddiskVolume3\Chat_Isi\data
 для избежания этого запускайте в режиме debug
