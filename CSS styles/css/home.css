@@ -1,0 +1,258 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(#1e1e1e, #121212); /* Каменный фон */
+  color: #e3dac6;
+  font-family: 'Georgia', serif;
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Левая панель — дерево */
+.sidebar {
+  width: 180px;
+  background: repeating-linear-gradient(
+    45deg,
+    #4a3725,
+    #4a3725 10px,
+    #3c2b1f 10px,
+    #3c2b1f 20px
+  ); /* Имитированная деревянная текстура */
+  border-right: 4px solid #3b2f1b;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: inset -4px 0 8px rgba(0, 0, 0, 0.8);
+}
+
+.sidebar h3 {
+  color: #ffcc88;
+  text-align: center;
+  font-size: 1rem;
+  text-shadow: 0 0 6px #553300;
+  margin-bottom: 1rem;
+}
+
+.room-buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow-y: auto;
+}
+
+.room-btn {
+  background: #4c3f2f;
+  color: #f0e0c0;
+  border: 2px solid #7a6240;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  border-radius: 6px;
+  box-shadow: inset 0 0 4px #000000;
+  transition: 0.2s;
+}
+
+.room-btn:hover,
+.room-btn.active {
+  background: #6b5640;
+  color: #ffe8b0;
+  border-color: #d4aa70;
+  box-shadow: 0 0 12px #d4aa7077;
+}
+
+.assistant-info {
+  background: rgba(70, 60, 50, 0.7);
+  border: 1px solid #7a6240;
+  color: #d4c2a8;
+  font-size: 0.65rem;
+  text-align: center;
+  margin-top: auto;
+  padding: 0.4rem;
+  border-radius: 4px;
+}
+
+/* Основная часть — камень и металл */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  height: 100vh;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+#messages {
+  flex: 1;
+  overflow-y: auto;
+  background: repeating-linear-gradient(
+    90deg,
+    #1a1a1a,
+    #1a1a1a 40px,
+    #222 40px,
+    #222 80px
+  ); /* Каменная плитка */
+  border: 3px solid #5e5e5e;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: inset 0 0 20px #000000;
+}
+
+.message {
+  background: linear-gradient(to right, #333, #2c2c2c);
+  border: 1px solid #777;
+  border-left: 4px solid #c2935c;
+  padding: 0.6rem;
+  margin-bottom: 0.6rem;
+  border-radius: 4px;
+  box-shadow: 0 0 5px #000000aa;
+  color: #f6f2e6;
+}
+
+.message:hover {
+  background: #3a3a3a;
+}
+
+.time {
+  color: #aaa;
+  font-size: 0.75em;
+}
+
+img.message-img {
+  max-width: 400px;
+  max-height: 400px;
+  border-radius: 6px;
+  border: 2px solid #888;
+  margin-top: 0.4rem;
+  box-shadow: 0 0 8px #444;
+}
+
+/* Форма ввода */
+.message-input-form {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(#2c2c2c, #1e1e1e);
+  border: 2px solid #444;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #000000cc;
+}
+
+.nickname-input,
+.message-input,
+.file-input {
+  border: 1px solid #777;
+  background: #1a1a1a;
+  color: #f8f6f2;
+  padding: 0.4rem;
+  border-radius: 4px;
+}
+
+.nickname-input {
+  width: 120px;
+}
+
+.message-input {
+  flex: 1;
+  resize: none;
+  min-height: 30px;
+  max-height: 80px;
+  font-size: 1rem;
+  line-height: 1.2rem;
+}
+
+.file-input {
+  font-size: 0.85rem;
+}
+
+/* Кнопка отправки — светящийся металл */
+.send-btn {
+  background: linear-gradient(to bottom, #f3cc7a, #c2935c);
+  color: #2c1f0f;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border: 2px solid #704f1d;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.2s;
+  box-shadow: 0 0 10px #d6ae5d88;
+}
+
+.send-btn:hover {
+  background: linear-gradient(to bottom, #ffe399, #c99b4d);
+  box-shadow: 0 0 14px #ffc255aa;
+}
+
+/* Кнопка скролла вниз */
+.scroll-btn {
+  background: #c2935c;
+  color: #fffaf0;
+  border: none;
+  padding: 5px 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 0 0 8px #c2935caa;
+}
+
+.scroll-btn:hover {
+  background: #e8b875;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    order: 1;
+    max-height: 200px;
+    border-right: none;
+    border-bottom: 4px solid #3b2f1b;
+  }
+
+  .main {
+    order: 2;
+    padding: 0.5rem;
+    height: 100dvh;
+  }
+
+  #messages {
+    height: 50vh;
+    padding: 0.5rem;
+  }
+
+  .message {
+    font-size: 0.95rem;
+  }
+
+  img.message-img {
+    max-width: 100%;
+  }
+
+  form {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  #name {
+    flex: 1 1 30%;
+  }
+
+  #text {
+    flex: 1 1 50%;
+  }
+
+  #file {
+    flex: 1 1 10%;
+  }
+
+  button[type="submit"] {
+    flex: 1 1 10%;
+  }
+}
