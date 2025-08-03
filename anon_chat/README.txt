@@ -29,3 +29,25 @@ python -m venv venv               # создаём виртуальное окр
 venv\Scripts\activate             # активируем виртуальное окружение
 pip install flask                 # устанавливаем Flask
 python app.py                     # запускаем сервер
+
+### Запуск на Windows (Простой)
+
+1. Открой PyCharm
+    Запусти PyCharm.
+    Выбери: File → Open... и укажи папку проекта (например, Chat_Isi).
+2. Создай виртуальное окружение
+    PyCharm сам предложит создать виртуальное окружение при первом запуске проекта.
+    Или настрой вручную:
+        File → Settings → Python Interpreter.
+        Нажми ⚙️ → Add... → Virtualenv Environment.
+        Выбери:
+            New environment → путь: venv в папке проекта.
+            Базовый интерпретатор: укажи путь к Python (python.exe).
+        Нажми OK — окружение создастся и привяжется.
+3. Установи Flask
+    Перейди в File → Settings → Python Interpreter.
+    Нажми +, найди Flask, нажми Install Package.
+Или:
+    Открой встроенный терминал (внизу IDE):
+    python -m pip install flask
+4. Запусти app.py 
