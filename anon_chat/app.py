@@ -8,6 +8,15 @@ app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'uploads'
 app.config['DATA_FOLDER'] = 'data'
 
+@app.route('/')
+def home():
+    return render_template('home.html')
+
+@app.route('/chat')
+def chat():
+    return render_template('index.html', rooms=CHAT_ROOMS)
+
+
 # Создадим папки, если не существует
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 os.makedirs(app.config['DATA_FOLDER'], exist_ok=True)

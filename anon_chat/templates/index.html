@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <title>👁Chat_Isi</title>
+  <title>/Chat_Isi</title>
   <link rel="stylesheet" href="/static/style.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -14,15 +14,20 @@
     {% for room in rooms %}
       <button class="room-btn" data-room="{{ room }}">{{ room }}</button>
     {% endfor %}
+    
   </div>
+
     <!-- Плашка с информацией от меня -->
     <div class="assistant-info">
-      OpenSourceLocalChat v2.3
+      <a href="https://github.com/IncubusFFA/Chat_Isi" target="_blank" rel="noopener noreferrer">
+        OpenSourceLocalChat v2.4
+      </a>
     </div>
   </div>
 
   <!-- Центральная часть -->
   <div class="main">
+
     <div id="messages"></div>
 
     <!-- Набор сообщения под окнами сообщений -->
@@ -34,6 +39,9 @@
       <button type="button" id="scrollBtn" class="scroll-btn" title="К последнему сообщению">⬇</button>
     </form>
   </div>
+
 </body>
 <script src="/static/script.js"></script>
+<script src="/static/search.js"></script>
+
 </html>
