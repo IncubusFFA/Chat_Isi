@@ -38,7 +38,7 @@ def get_messages(room):
     if room not in CHAT_ROOMS:
         return jsonify({"error": "Неверный чат"}), 400
     messages = load_messages(room)
-    return jsonify(messages[-50:])  # последние 50 сообщений
+    return jsonify(messages[-500:])  # последние 500 сообщений
 
 @app.route('/post/<room>', methods=['POST'])
 def post_message(room):
