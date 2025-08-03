@@ -77,10 +77,16 @@ msgForm.addEventListener('submit', async e => {
     fileInput.value = '';
     document.getElementById('text').placeholder = 'Сообщение...';
     loadMessages();
+    const box = document.getElementById('messages');
+    box.scrollTo({
+    top: box.scrollHeight,
+    behavior: 'smooth'
+});
   } catch (err) {
     console.error('Ошибка отправки сообщения:', err);
     alert('Ошибка отправки');
   }
+  
 });
 
 roomButtons.forEach(btn => {
@@ -91,8 +97,19 @@ roomButtons.forEach(btn => {
 
 document.getElementById('scrollBtn').addEventListener('click', () => {
   const box = document.getElementById('messages');
-  box.scrollTop = box.scrollHeight;
+  box.scrollTo({
+  top: box.scrollHeight,
+  behavior: 'smooth'
+});
 });
 
 setActiveRoom(currentRoom);
-setInterval(loadMessages, 3000);
+setInterval(() => {
+  // Проверяем, есть ли выделенный текст на странице
+  const selection = window.getSelection();
+  const isTextSelected = selection && selection.toString().length > 0;
+
+  if (!isTextSelected) {
+      loadMessages();
+  }
+}, 3000);
