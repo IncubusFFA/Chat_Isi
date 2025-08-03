@@ -261,7 +261,8 @@ img.message-img {
   }
 
   img.message-img {
-    max-width: 100%;
+    max-width: 200px;
+    max-height: 200px;
   }
 
   form {
