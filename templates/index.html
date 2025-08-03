@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>👁Chat_Isi</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <!-- Левая панель -->
+  <div class="sidebar">
+    <h3>Чаты</h3>
+  <div class="room-buttons-container">
+    {% for room in rooms %}
+      <button class="room-btn" data-room="{{ room }}">{{ room }}</button>
+    {% endfor %}
+  </div>
+    <!-- Плашка с информацией от меня -->
+    <div class="assistant-info">
+      OpenSourceLocalChat v2.1
+    </div>
+  </div>
+
+  <!-- Центральная часть -->
+  <div class="main">
+    <div id="messages"></div>
+
+    <!-- Набор сообщения под окнами сообщений -->
+    <form id="msgForm" class="message-input-form">
+      <input type="text" id="name" placeholder="Ник (не обяз.)" maxlength="20" class="nickname-input" />
+      <textarea id="text" placeholder="Ввод сообщения..." rows="1" maxlength="1000" class="message-input"></textarea>
+      <input type="file" id="file" accept="image/*" class="file-input" />
+      <button type="submit" class="send-btn">Отправить</button>
+      <button type="button" id="scrollBtn" class="scroll-btn" title="К последнему сообщению">⬇️</button>
+    </form>
+  </div>
+</body>
+<script src="/static/script.js"></script>
+</html>
