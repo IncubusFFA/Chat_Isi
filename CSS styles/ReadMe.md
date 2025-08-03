@@ -6,11 +6,11 @@
 
 ## 1. style.css (По умолчанию)
 
-![style.css](/images/ScreenshotStyle.png)
+![style.css](./images/ScreenshotStyle.png)
 
 ## 2. 2000x.css
 
-![2000x.css](/images/Screenshot2000x.png)
+![2000x.css](./images/Screenshot2000x.png)
 
 ### Подключение:
 Переименуй нужный файл .css в style.css и перемести его в директорию /static
