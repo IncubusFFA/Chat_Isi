@@ -106,6 +106,17 @@ body {
   min-height: 0;
 }
 
+.nickname {
+  font-weight: normal;           /* обычный шрифт без жирности */
+  color: #3399ff;                /* светло-синий цвет, похожий на 2ch */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* системный шрифт */
+  font-size: 0.9rem;             /* чуть меньше обычного */
+  text-decoration: none;         /* без подчеркивания */
+  user-select: text;             /* можно выделять */
+  cursor: default;               /* курсор по умолчанию */
+
+}
+
 .message {
   background: rgba(60, 60, 80, 0.4);
   color: #f5f5f5;
@@ -150,7 +161,6 @@ img.message-img {
   max-height: 400px;
   border-radius: 8px;
   margin-top: 0.5rem;
-  border: 1px solid #585b70;
 }
 #messages::-webkit-scrollbar {
   width: 10px;

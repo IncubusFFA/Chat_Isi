@@ -40,13 +40,14 @@ async function loadMessages() {
       );
 
       // Фото (если есть)
-      let imgHTML = m.img_url ? `<br><img class="message-img" src="${escapeHTML(m.img_url)}" alt="Фото" />` : '';
+      let imgHTML = m.img_url ? `<br><img class="message-img" src="${escapeHTML(m.img_url)}" alt=" [Фото] " />` : '';
 
       return `<div class="message" data-id="${m.id}">
-        <b>${safeName}</b> <span class="time">[${safeTime}]</span>
-        <br>${linkedText}
-        ${imgHTML}
-      </div>`;
+      <b class="nickname">${safeName}</b> <span class="time">[${safeTime}]</span>
+      <br>${linkedText}
+      ${imgHTML}
+    </div>`;
+    
     }).join('');
   } catch (err) {
     console.error('Ошибка загрузки сообщений:', err);
@@ -79,14 +80,13 @@ msgForm.addEventListener('submit', async e => {
     loadMessages();
     const box = document.getElementById('messages');
     box.scrollTo({
-    top: box.scrollHeight,
-    behavior: 'smooth'
-});
+      top: box.scrollHeight,
+      behavior: 'smooth'
+    });
   } catch (err) {
     console.error('Ошибка отправки сообщения:', err);
     alert('Ошибка отправки');
   }
-  
 });
 
 roomButtons.forEach(btn => {
@@ -98,18 +98,33 @@ roomButtons.forEach(btn => {
 document.getElementById('scrollBtn').addEventListener('click', () => {
   const box = document.getElementById('messages');
   box.scrollTo({
-  top: box.scrollHeight,
-  behavior: 'smooth'
-});
+    top: box.scrollHeight,
+    behavior: 'smooth'
+  });
 });
 
+// Добавляем отправку по Enter и перенос строки по Shift+Enter
+document.addEventListener("DOMContentLoaded", () => {
+  const textarea = document.getElementById("text");
+  textarea.addEventListener("keydown", function (e) {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault(); // отменяем перенос строки
+      msgForm.requestSubmit(); // отправляем форму
+    }
+    // Shift+Enter — перенос строки по умолчанию
+  });
+});
+
+
 setActiveRoom(currentRoom);
+
 setInterval(() => {
   // Проверяем, есть ли выделенный текст на странице
   const selection = window.getSelection();
   const isTextSelected = selection && selection.toString().length > 0;
 
   if (!isTextSelected) {
-      loadMessages();
+    loadMessages();
   }
 }, 3000);
+

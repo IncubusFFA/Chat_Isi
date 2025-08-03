@@ -62,7 +62,7 @@ def post_message(room):
     img_url = None
     if file and file.filename:
         filename = secure_filename(file.filename)
-        timestamp = datetime.now().strftime("%Y%m%d%H%M%S%f")
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         filename = f"{timestamp}_{filename}"
         filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
         file.save(filepath)
@@ -77,7 +77,7 @@ def post_message(room):
         'name': name or "Аноним",
         'text': text,
         'img_url': img_url,
-        'time': datetime.now().strftime("%H:%M:%S")
+        'time': datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     })
 
     save_messages(room, messages)
