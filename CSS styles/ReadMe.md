@@ -14,7 +14,7 @@
 
 ![2000x.css](./images/Screenshot2000x.png)
 
-## 3. pink
+## 3. pink.css
 
 ![pink.css](./images/ScreenshotPink.png)
 
@@ -22,7 +22,7 @@
 
 ![2000x.css](./images/Screenshot2077.png)
 
-## 5. Home.css
+## 5. home.css
 
 ![2000x.css](./images/ScreenshotHome.png)
 
