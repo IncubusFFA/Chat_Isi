@@ -1,4 +1,4 @@
-# Chat_Isi
+# Chat_Isi v2.3
 
 ![Screenshot](./Screenshot.png)
 
